@@ -5,8 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
 Checkout.delete_all
 OrderItem.delete_all
+
+Email.find_or_create_by id: 1, address: 'joshuaatteberry@gmail.com'
 
 Manufacturer.find_or_create_by id: 1, name: 'Toyota'
 

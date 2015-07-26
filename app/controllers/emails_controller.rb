@@ -1,7 +1,11 @@
 class EmailsController < ApplicationController
 
   def edit
-    @email = Email.find(1)
+    # if Email.exists?(id: 1)
+      @email = Email.find(1)
+    # else
+    #   Email.create { |e| e.id = 1, e.save, @email = e }
+    # end
   end
 
   def update
