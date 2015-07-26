@@ -1,0 +1,30 @@
+<div class="cards col-xs-12 col-md-8 col-md-offset-2">
+  <div class="row">
+    <div class="accessory-image accessory-image-cart col-xs-12 col-md-4">
+      <%= image_tag accessory.image.url(:large), class: "large-image" %>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div class="accessory-name">
+        <%= accessory.name %>
+      </div>
+    </div>
+    <div class="price-and-button price-and-button-cart col-xs-12 col-md-2">
+      <%= form_for order_item, remote: true do |f| %>
+      <!-- <div class="price-and-price-per-month">
+        <div class="price">
+          <h4><%= number_to_currency accessory.full_price %></h4>
+        </div>
+        <div class="price-discount">
+          <h4><%= number_to_currency accessory.discount %></h4>
+        </div>
+        <div class="price-per-month">
+          <h4><%= number_to_currency accessory.monthly %> *</h4>
+        </div>
+      </div> -->
+        <%= f.hidden_field :quantity, value: order_item.quantity.to_i, class: "form-control", min: 1 %>
+        <%= f.hidden_field :accessory_id, value: accessory.id %>
+        <%= link_to "Remove", order_item, { data: { confirm: "Are you sure you wish to delete the accessory '#{order_item.accessory.name}' from your cart?" }, method: :delete, remote: true, class: "btn btn-danger add-button" } %>
+      <% end %>
+    </div>
+  </div>
+</div>

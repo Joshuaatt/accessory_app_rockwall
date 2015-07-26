@@ -1,0 +1,56 @@
+.checkout-bar {
+  background: #E6E6E6;
+  border-radius: 5px;
+  top: 100%;
+  text-align: center;
+}
+
+.continue-button, .back-button {
+  padding: 15px 30px;
+  margin: 10px 0;
+}
+
+.continue-button {
+  display: inline-block;
+}
+
+.back {
+  text-align: center;
+}
+
+.cart-text {
+  display: inline-block;
+}
+
+.total {
+  font-size: 1.4em;
+  margin: 0 8px 0;
+}
+
+.cart-total {
+  display: inline-block;
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 0.33);
+  -moz-box-shadow:    1px 1px 5px 0px rgba(50, 50, 50, 0.33);
+  box-shadow:         1px 1px 5px 0px rgba(50, 50, 50, 0.33);
+}
+
+.cart-text-cards {
+  display: inline-block;
+  padding: 15px 20px;
+}
+
+.subtotal {
+  background: gray;
+  color: white;
+}
+
+.monthly_subtotal {
+  background: white;
+  margin-left: -4px;
+}
+
+.declined {
+  background: #d9534f;
+  color: white;
+  margin-left: -4px;
+}

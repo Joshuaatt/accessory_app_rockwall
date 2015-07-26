@@ -1,0 +1,26 @@
+<div class="navbar navbar-fixed-bottom" role="navigation">
+  <div class="container-fluid checkout-bar">
+    <div class="row">
+      <div class="back col-xs-3 col-md-3">
+        <%= link_to "Back", :back, class: "btn btn-success back-button" %>
+      </div>
+      <div class="col-xs-9 col-md-6 cart-text-checkout">
+        <%= link_to "Confirm order", youre_done_index_path, class: "btn btn-success continue-button" %>
+        <span class="total">Total:</span>
+        <div class="cart-total">
+          <div class="subtotal cart-text-cards">
+            <%= number_to_currency current_order.subtotal %>
+          </div>
+          <div class="monthly_subtotal cart-text-cards">
+            <%= number_to_currency current_order.monthly_subtotal %>/mo. *
+          </div>
+          <div class="declined">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="asterix">
+      * Monthly price is an estimate based on 10% APR for 60 months. Speak with dealer representative for price including tax, installation, and other interest rates.
+    </div>
+  </div>
+</div>

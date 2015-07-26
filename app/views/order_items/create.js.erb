@@ -1,0 +1,13 @@
+<% if @order.errors.any? || @order_item.errors.any? %>
+alert("not valid.")
+<% elsif @order_item.accessory_id == 396 %>
+  $('div[id="'+ 396 +'"]').css("background-color", "#ADD6FF").find('div.decline_button').hide();
+  $('div[id="'+ 396 +'"]').find('div.remove').append('<%= link_to "Remove", @order_item, { method: :delete, remote: true, class: "btn btn-danger add-button" } %>');
+  $('div.declined').addClass("cart-text-cards").append("Declined");
+<% else %>
+  $('div[id="'+ <%= @order_item.accessory_id %> +'"]').css("background-color", "#ADD6FF").find('div.add').hide();
+  $('div[id="'+ <%= @order_item.accessory_id %> +'"]').find('div.remove').append('<%= link_to "Remove", @order_item,
+    { method: :delete, remote: true, class: "btn btn-danger add-button" } %>');
+
+  $(".cart-text").html("<%= escape_javascript(render 'layouts/cart_text') %>");
+<% end %>

@@ -1,0 +1,37 @@
+<div class="page-header">
+  <h1>Last step!</h1>
+  <%= link_to root_path do %>
+    <h3 class="start-over">Start over</h3>
+  <% end %>
+</div>
+<div class="col-xs-12 col-md-6 col-md-offset-3">
+  <%= bootstrap_form_for [@associate, @checkout] do |f| %>
+    <%= f.text_field :customer_name, required: true %>
+    <%= f.text_field :customer_email %>
+    <%= f.text_field :customer_phone %>
+    <%= f.text_field :stock_number %>
+    <%= f.hidden_field :associate, :value => @associate %>
+    <%= f.submit "Send" %>
+  <% end %>
+
+  <% if current_order.subtotal > 0 && current_order.order_items.where({ accessory_id: 396 }).empty? %>
+    <% current_order.order_items.each do |order_item| %>
+      <div>
+        <h1 class="checkout-list">Model:</h1>
+        <%= Model.find(Accessory.find(order_item.accessory_id).model_id).name %>
+
+        <h1 class="checkout-list">Accessory:</h1>
+        <%= Accessory.find(order_item.accessory_id).name %>
+        <%= number_to_currency Accessory.find(order_item.accessory_id).parts_cost %>
+        <%= number_to_currency Accessory.find(order_item.accessory_id).labor_cost %>
+        <%= number_to_currency order_item.total_price %>
+        <%= Accessory.find(order_item.accessory_id).part_number %>
+      </div>
+    <% end %>
+  <% else %>
+    <h1 class="checkout-list">Customer declined.</h1>
+  <% end %>
+  <%= @associate.name %>
+</div>
+
+<!-- , :url => associate_path, :html => { :multipart => true } -->

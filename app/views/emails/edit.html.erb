@@ -1,0 +1,10 @@
+<%= render "shared/navbar" %>
+<%= render "console/console_nav" %>
+
+<h1>Edit BCC emails</h1>
+<p>Please separate emails with commas</p>
+<p>For example <strong>sally@email.com, john@email.com, pat@email.com</strong>
+<%= bootstrap_form_for [@email] do |f| %>
+  <%= f.text_area :address, :rows => "10" %>
+  <%= f.submit %>
+<% end %>

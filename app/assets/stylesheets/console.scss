@@ -1,0 +1,65 @@
+.console-nav {
+  font-size: 2em;
+  float: none;
+  border-bottom: 1px solid #eeeeee;
+  margin-top: -12px;
+}
+
+ul.console-nav li {
+  text-align: center;
+  margin-left: 12%;
+}
+
+.address {
+  line-height: .7em;
+  margin-bottom: 30px;
+}
+
+.delete-my-account {
+  background: rgba(255, 109, 63, 1);
+  margin-top: 20px;
+}
+
+.delete-my-account-text {
+  padding: 10px 20px;
+}
+
+#order-detail-container {
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 0.33);
+  -moz-box-shadow:    1px 1px 5px 0px rgba(50, 50, 50, 0.33);
+  box-shadow:         1px 1px 5px 0px rgba(50, 50, 50, 0.33);
+}
+
+.order-detail-headers {
+  font-size: 1.4em;
+  padding-bottom: 25px;
+}
+
+ul#order-detail li {
+  display: inline;
+  text-align: center;
+  font-size: 1.5em;
+  padding-bottom: 20px;
+  margin-bottom: 0px;
+}
+
+#order-detail-1, #order-detail-2, #order-detail-3, #order-detail-4 {
+  text-align: center;
+}
+
+#sandwich {
+  padding: 20px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.colored {
+  background-color: #E6E6E6;
+}
+
+.order-detail-associate {
+  padding-bottom: 10px;
+}
+
+.order-breakdown {
+  padding-bottom: 10px;
+}

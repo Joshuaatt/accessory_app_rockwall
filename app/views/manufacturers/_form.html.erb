@@ -1,0 +1,9 @@
+<div class="admin-controls">
+  <h3>Admin controls (Manufacturers):</h3>
+  <% render "layouts/errors", :object => @manufacturer %>
+
+  <%= bootstrap_form_for @manufacturer do |f| %>
+    <%= f.text_field :name %>
+    <%= f.submit %>
+  <% end %>
+</div>

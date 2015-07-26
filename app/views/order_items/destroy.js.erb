@@ -1,0 +1,14 @@
+<% if @order_item.accessory_id == 396 %>
+  $('div[id="'+ 396 +'"]').css("background-color", "white");
+  $('div[id="'+ 396 +'"]').find('div.decline_button').show();
+  $('div[id="'+ 396 +'"]').find('div.remove').empty();
+<% else %>
+  $('div[id="'+ <%= @order_item.accessory_id %> +'"]').css("background-color", "white");
+
+  $('div[id="'+ <%= @order_item.accessory_id %> +'"]').find('div.add').show();
+
+  $('div[id="'+ <%= @order_item.accessory_id %> +'"]').find('div.remove').empty();
+<% end %>
+$(".cart-text").html("<%= escape_javascript(render 'layouts/cart_text') %>");
+$(".cart-text-checkout").html("<%= escape_javascript(render 'checkout/checkout_footer') %>")
+$(".shopping-cart").html("<%= escape_javascript(render 'carts/shopping_cart') %>")

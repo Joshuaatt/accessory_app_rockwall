@@ -1,0 +1,42 @@
+
+<div class="page-header col-xs-12">
+  <h1>
+    <%= link_to manufacturers_path do %>
+      Select your <%= @manufacturer.name %> model
+    <% end %>
+    <% if admin_signed_in? %>
+      <small>
+        <%= link_to 'Add Model', new_manufacturer_model_path(@manufacturer, @model), id: "add_link" %>
+      </small>
+    <% end %>
+  </h1>
+</div>
+
+<% if @manufacturer.models.any? %>
+
+      <% @manufacturer.models.each do |model| %>
+        <%= link_to manufacturer_model_path(@manufacturer, model) do %>
+          <div class="cards col-md-12">
+            <div class="row">
+              <div class="model-image col-xs-4">
+                <%= image_tag model.image.url(:large), class: "large-image" %>
+              </div>
+              <div class="model-year-name">
+                <div class="model-year col-xs-2">
+                  <%= model.year %>
+                </div>
+                <div class="model-name col-xs-2">
+                  <%= model.name %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+        <% if admin_signed_in? %>
+          <div class="admin-controls edit-model col-xs-5">
+            <%= link_to 'edit', edit_manufacturer_model_path(@manufacturer, model) %>
+          </div>
+        <% end %>
+      <% end %>
+
+<% end %>

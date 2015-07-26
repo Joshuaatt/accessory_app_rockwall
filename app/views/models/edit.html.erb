@@ -1,0 +1,9 @@
+<%= render 'layouts/errors', object: @model %>
+<div class="page-header">
+  <h1><%= link_to "Edit " + @model.name, manufacturers_path %></h1>
+</div>
+
+<div class="admin-controls col-xs-12 col-md-6 col-md-offset-3">
+  <%= image_tag @model.image.url(:large), class: "large-image" %>
+  <%= render 'form' %>
+</div>

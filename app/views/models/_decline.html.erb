@@ -1,0 +1,23 @@
+<div class="decline cards col-xs-12 col-md-12" >
+  <div class="row" id="396">
+    <div class="accessory-image col-xs-12 col-md-4">
+      <%= image_tag "no-thank-you-.jpg", class: "large-image" %>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div class="accessory-name">
+        I do not want to order accessories at this time.
+      </div>
+    </div>
+    <div class="price-and-button col-xs-12 col-md-2">
+      <%= form_for @order_item, remote: true do |f| %>
+        <%= f.hidden_field :quantity, value: 1, class: "form-control", min: 1 %>
+        <%= f.hidden_field :accessory_id, value: 396 %>
+        <div class="decline_button">
+          <%= f.submit "Decline", class: "btn btn-danger decline-button" %>
+        </div>
+        <div class="remove decline-remove">
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

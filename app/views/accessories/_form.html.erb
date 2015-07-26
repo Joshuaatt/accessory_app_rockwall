@@ -1,0 +1,12 @@
+<%= render 'layouts/errors', object: @accessory %>
+
+<%= bootstrap_form_for [ @model, @accessory ], :url => model_accessories_path, :html => { :multipart => true } do |f| %>
+  <%= f.text_field :name, :placeholder => "Accessory name", required: true %>
+  <%= f.text_area :description, :rows => "10" %>
+  <%= f.number_field :price, :step => 0.01, :placeholder => "Price to Customer", :input_html => { :value => 0 } %>
+  <%= f.number_field :parts_cost, :step => 0.01, :placeholder => "Price to service department", :input_html => { :value => 0 } %>
+  <%= f.number_field :labor_cost, :step => 0.01, :placeholder => "Price of labor to customer", :input_html => { :value => 0 } %>
+  <%= f.text_field :part_number %>
+  <%= f.file_field :image %>
+  <%= f.submit %>
+<% end %>

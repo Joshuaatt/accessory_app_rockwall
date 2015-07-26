@@ -1,0 +1,21 @@
+<%= render 'shared/navbar' %>
+<div class="row row-centered">
+  <div class="col-xs-12 col-centered">
+    <ul class="manufacturer-buttons">
+      <%= link_to manufacturer_path(@manufacturers.find(1)) do %>
+        <%= image_tag "toyota-of-corvallis.jpg", class: "logo-button-toyota" %>
+      <% end %>
+      <%= link_to manufacturer_path(@manufacturers.find(2)) do %>
+        <%= image_tag "subaru-of-corvallis-logo.jpg", class: "logo-button-subaru" %>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- <% @manufacturers.each do |manufacturer| %>
+  <%= link_to manufacturer.name, manufacturer_path(manufacturer), class: "btn btn-lg btn-custom-manufacturer" %>
+<% end %> -->
+
+<!-- <div class="admin-controls">
+  <p><%= link_to "Add manufacturer", new_manufacturer_path %></p>
+</div> -->

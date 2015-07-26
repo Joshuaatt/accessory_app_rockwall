@@ -1,0 +1,57 @@
+<%= render "shared/navbar" %>
+
+<%= render "console_nav" %>
+<div id="console-body">
+    <script type="text/javascript">
+    $(function () {
+      $('#container').highcharts({
+          title:    { text: 'Monthly Accessory Sales', x: -20 },
+          subtitle: { text: 'Last 30 days', x: -20 },
+          xAxis:    {
+            type: "datetime",
+            dateTimeLabelFormats: {
+                month: '%e. %b',
+                year: '%b'
+            },
+            title: {
+                text: 'Date'
+            }
+          },
+          yAxis:    {
+            title: {
+              text: 'Dollars'
+            },
+            plotLines: [{
+              value: 0,
+              width: 1,
+              color: '#808080'
+            }]
+          },
+          tooltip: {
+            formatter: function() {
+              return Highcharts.dateFormat("%B %e, %Y", this.x) + ': ' + "$" + Highcharts.numberFormat(this.y, 2);
+            }
+          },
+          legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+          },
+          series: [{
+            pointInterval: <%= 1.day * 1000%>,
+            pointStart: <%= 4.weeks.ago.to_i * 1000 %>,
+            name: 'Revenue',
+            data: <%= (4.weeks.ago.to_date..Date.today).map { |date| Checkout.total_on(date).to_f }.inspect %>
+          }]
+      });
+    });
+    </script>
+    <div id="container"></div>
+</div>
+
+
+
+
+
+<!-- <%= line_chart sales_charts_path %> -->

@@ -1,0 +1,79 @@
+.cards {
+  margin-top: 20px;
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(50, 50, 50, 0.33);
+  -moz-box-shadow:    1px 1px 5px 0px rgba(50, 50, 50, 0.33);
+  box-shadow:         1px 1px 5px 0px rgba(50, 50, 50, 0.33);
+}
+
+.large-image {
+  max-width: 100%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.model-year-name {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+.model-year {
+  font-size: 1.5em;
+  margin-top: 5%;
+  margin-left: 10%;
+ }
+
+.model-name {
+  font-size: 1.6em;
+  margin-top: 5%;
+ }
+
+@media only screen and (min-width: 545px) {
+  .model-year {
+    font-size: 2em;
+    margin-top: 6.5%;
+    margin-left: 10%;
+  }
+
+  .model-name {
+    font-size: 2.5em;
+    margin-top: 5.2%;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .model-year {
+    font-size: 2.5em;
+    margin-top: 7.5%;
+    margin-left: 10%;
+  }
+
+  .model-name {
+    font-size: 3em;
+    margin-top: 6.5%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .model-year {
+    // font-size: 3em;
+    margin-top: 8%;
+    margin-left: 10%;
+  }
+
+  .model-name {
+    // font-size: 3.5em;
+    margin-top: 7%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .model-year {
+    // font-size: 3.5em;
+    margin-top: 8%;
+    margin-left: 10%;
+  }
+
+  .model-name {
+    // font-size: 4em;
+    margin-top: 7%;
+  }
+}

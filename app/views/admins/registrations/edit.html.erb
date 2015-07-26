@@ -1,0 +1,71 @@
+<%= render "shared/navbar" %>
+
+<%= render "console/console_nav" %>
+<div class="col-xs-12">
+
+  <!-- STRIPE -->
+  <div class="col-md-6 col-xs-12">
+    <h1>Make payment</h1>
+    <p>You can make a payment here or mail a check to:</p><br/>
+    <div class="address">
+      <p>Joshua Atteberry</p><br/>
+      <p>1711 Fairfax St</p><br/>
+      <p>Carlyle, IL, 62231</p>
+    </div>
+
+    <%= form_tag charges_path do %>
+    <article>
+      <!-- <label class="amount">
+        <span>Amount: $400.00</span>
+      </label> -->
+    </article>
+
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+            data-description="A month's subscription"
+            data-amount="40000"></script>
+    <% end %>
+  </div>
+
+  <div class="col-md-6 col-xs-12">
+    <h1>Edit <%= resource_name.to_s.humanize %></h1>
+
+    <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="field">
+        <%= f.email_field :email, autofocus: true %>
+      </div>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <div class="field">
+        <i>(leave blank if you don't want to change it)</i>
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <i>(we need your current password to confirm your changes)</i>
+        <%= f.password_field :current_password, autocomplete: "off" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Update" %>
+      </div>
+    <% end %>
+    <div class="delete-my-account">
+      <div class="delete-my-account-text">
+        <h3>Delete my account</h3>
+        <p>This will delete your login credentials. To end service entirely please contact <a href="mailto:joshuaatteberry@gmail.com?Subject=Discontinue%20service" target="_top">joshuaatteberry@gmail.com</a></p>
+        <p><%= button_to "Delete", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+      </div>
+    </div>
+
+  </div>
+</div>

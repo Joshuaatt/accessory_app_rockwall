@@ -1,0 +1,11 @@
+<div class="page-header">
+  <h1>Select a sales associate</h1>
+  <%= link_to root_path do %>
+    <h3 class="start-over">Start over</h3>
+  <% end %>
+</div>
+<% @associates.each do |associate| %>
+  <div class="col-md-4 col-md-offset-4 col-xs-12 associate-align-center-small">
+    <%= link_to associate.name, associate_path(associate.id), class: "btn btn-success associate" %>
+  </div>
+<% end %>

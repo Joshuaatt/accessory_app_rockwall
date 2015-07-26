@@ -1,0 +1,32 @@
+
+Customer Accessories Request
+
+
+<%= @checkout.customer_name %> requests the following accessories
+
+<% if @order_items.where({ accessory_id: 396 }).empty? %>
+
+<% @order_items.each do |order_item| %>
+
+
+Model: <%= Model.find(Accessory.find(order_item.accessory_id).model_id).name %>,
+Accessory: <%= Accessory.find(order_item.accessory_id).name %>,
+Labor cost: <%= number_to_currency Accessory.find(order_item.accessory_id).labor_cost %>,
+Total price: <%= number_to_currency order_item.total_price %>,
+Part number: <%= Accessory.find(order_item.accessory_id).part_number %>
+<% end %>
+
+<% else %>
+Customer declined.
+
+<% end %>
+
+
+Customer name: <%= @checkout.customer_name %>
+
+Customer email: <%= @checkout.customer_email %>
+
+Customer phone: <%= @checkout.customer_phone %>
+
+Sales Associate: <%= @checkout.associate.name %>
+Stock #: <%= @checkout.stock_number %>

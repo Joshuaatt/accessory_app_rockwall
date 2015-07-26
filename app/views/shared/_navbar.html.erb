@@ -1,0 +1,12 @@
+<div class="page-header">
+  <h1>
+    <%= link_to "Toyota | Subaru of Corvallis", manufacturers_path %>
+    <small>
+      <% if admin_signed_in? %>
+        <%= link_to "logout", destroy_admin_session_path, :method => :delete %> | <%= link_to "console", console_index_path %>
+      <% else %>
+        <%= link_to "Admin login", new_admin_session_path %>
+      <% end %>
+    </small>
+  </h1>
+</div>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Toyota | Subaru of Corvallis</title>
+  <link href='//fonts.googleapis.com/css?family=Oxygen:400,300|Open+Sans:400,300' rel='stylesheet' type='text/css'>  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width" />
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+        <h3 class="notice"><%= notice %></h3>
+        <h3 class="alert"><%= alert %></h3>
+      <%= yield %>
+    </div>
+  </div>
+</body>
+</html>
