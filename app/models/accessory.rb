@@ -6,6 +6,7 @@ class Accessory < ActiveRecord::Base
 
   has_attached_file :image,
     :preserve_files => "true",
+    :s3_protocol => :https,
     :path => ":rails_root/public/system/:attachment/:id/:basename_:style.:extension",
     :url => "/system/:attachment/:id/:basename_:style.:extension",
     :styles => {

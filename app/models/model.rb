@@ -5,6 +5,7 @@ class Model < ActiveRecord::Base
   validates :year, presence: true
 
   has_attached_file :image, :path => ":rails_root/public/system/:attachment/:id/:basename_:style.:extension",
+    :s3_protocol => :https,
     :url => "/system/:attachment/:id/:basename_:style.:extension",
     :styles => {
       :thumb    => ['100x100#',  :jpg, :quality => 70],
