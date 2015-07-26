@@ -2,6 +2,7 @@ class ChargesController < ApplicationController
   def new
   end
 
+  # TODO: Change amount and description
   def create
     # Amount in cents
     @amount = 40000
@@ -14,7 +15,7 @@ class ChargesController < ApplicationController
     charge = Stripe::Charge.create(
       :customer    => customer.id,
       :amount      => @amount,
-      :description => 'Toyota Subaru of Corvallis',
+      :description => 'Toyota of Rockwall',
       :currency    => 'usd'
     )
 

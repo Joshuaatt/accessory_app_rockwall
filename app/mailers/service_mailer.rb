@@ -1,5 +1,6 @@
 class ServiceMailer < ApplicationMailer
-  default :from => "brianm@toyotacorvallis.com"
+  # TODO: Change this to parts manager email
+  default :from => "joshuaatteberry@gmail.com"
   # include OrderHelper
   # helper :order
 
