@@ -93,6 +93,7 @@ Rails.application.configure do
   # Change this when the new url is decided on
   # config.action_mailer.default_url_options = { host: 'http://nameless-wildwood-6504.herokuapp.com', port: 3000 }
 
+  # TODO: Change domain to new domain when creating new app
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :port           => ENV['MAILGUN_SMTP_PORT'],

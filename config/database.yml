@@ -21,9 +21,10 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: 5
 
+# TODO: Change to new app name
 development:
   <<: *default
-  database: accessory_app_v2_development
+  database: accessory_app_rockwall_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -55,9 +56,10 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
+# TODO: Change to new app name
 test:
   <<: *default
-  database: accessory_app_v2_test
+  database: accessory_app_rockwall_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -78,10 +80,12 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+
+# TODO: Change to new app name and set DB username
 production:
   <<: *default
-  database: accessory_app_v2_production
-  username: accessory_app_v2
-  password: <%= ENV['ACCESSORY_APP_V2_DATABASE_PASSWORD'] %>
+  database: accessory_app_rockwall_production
+  username: accessory_app_rockwall
+  password: <%= ENV['ACCESSORY_APP_ROCKWALL_DATABASE_PASSWORD'] %>
   url:  <%= ENV["DATABASE_URL"] %>
   pool: <%= ENV["DB_POOL"] || ENV['MAX_THREADS'] || 5 %>
