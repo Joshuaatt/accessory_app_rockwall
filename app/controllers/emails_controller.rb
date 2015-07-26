@@ -1,7 +1,7 @@
 class EmailsController < ApplicationController
 
   def edit
-    @email = Email.find(1)
+    @email = Email.find_or_create_by!(1)
   end
 
   def update
